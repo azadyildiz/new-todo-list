@@ -119,9 +119,7 @@ function deleteAllItemsLS(){
 
 //DRAG DROP SIDE
 let dragged ,
-    dropped ,
-    draggedPos,
-    droppedPos;
+    dropped ;
 function drag(event){
     dragged = event.target;
     if(dragged.className != "list-element"){ //CONTROL
@@ -134,15 +132,7 @@ function drop(event){
     if(dropped.className != "list-element"){ // CONTROL
         dropped = event.target.parentElement;
     }
-        for(var i = 0 ; i < list.childNodes.length; i++){
-        if(list.childNodes[i] == dragged){
-            draggedPos = i;
-        }
-        else if(list.childNodes[i]==dropped){
-            droppedPos = i ;
-        }
-    }
-    a = dragged; // ?QUESTION => Burayı böyle yaptığımızda ve aşağıda draggedı değiştirdiğimizde a da değişiyo neden?
+
     a = dragged.innerHTML;
     b = dropped.innerHTML;
     dragged.innerHTML = b;
